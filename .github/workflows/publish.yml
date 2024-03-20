@@ -35,18 +35,19 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          #platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
             81aytac/caddy-cloudflare:latest
             81aytac/caddy-cloudflare:${{ env.TAG }}
 
-      - name: Create github release
-        uses: ncipollo/release-action@v1.13.0
-        with:
-          tag: ${{ env.TAG }}
-          allowUpdates: true
-          makeLatest: true
+      # - name: Create github release
+      #   uses: ncipollo/release-action@v1.13.0
+      #   with:
+      #     tag: ${{ env.TAG }}
+      #     allowUpdates: true
+      #     makeLatest: true
 
 # jobs:
 #     push-store-image:
